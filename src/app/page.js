@@ -1,21 +1,20 @@
-import { Client, Databases, Query  } from "appwrite";
+import { Client, Databases, Query } from "appwrite";
 import { Suspense } from "react";
 import BlogCard from "@/components/BlogCard";
 import SearchInput from "@/components/SearchInput";
 
 // create connect with data base
 const client = new Client()
-  .setEndpoint("https://cloud.appwrite.io/v1")
-  .setProject("65f93a3001815bc45a46");
+  .setEndpoint(process.env.APP_WRITE_ENDPOINT)
+  .setProject(process.env.CLIENT_ID);
 
 const databases = new Databases(client);
 
 export default async function Home() {
   // get blogs post lists
   const blogPosts = await databases.listDocuments(
-    "65f93c6de4d6a8d848ac",
-    "65f93c7c05359b81560f",
-    
+    process.env.DATABASE_ID,
+    "65f93c7c05359b81560f"
   );
 
   return (

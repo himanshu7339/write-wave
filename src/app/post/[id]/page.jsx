@@ -3,15 +3,14 @@ import { Client, Databases } from "appwrite";
 
 // connection with app write server
 const client = new Client()
-  .setEndpoint("https://cloud.appwrite.io/v1")
-  .setProject("65f93a3001815bc45a46");
+  .setEndpoint(process.env.APP_WRITE_ENDPOINT)
+  .setProject(process.env.CLIENT_ID);
 const databases = new Databases(client);
 
 const PostDetails = async ({ params: { id } }) => {
-
-    // get post details using id
+  // get post details using id
   const post = await databases.getDocument(
-    "65f93c6de4d6a8d848ac",
+    process.env.DATABASE_ID,
     "65f93c7c05359b81560f",
     `${id}`
   );
