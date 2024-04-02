@@ -16,8 +16,8 @@ const PostDetails = async ({ params: { id } }) => {
   );
 
   return (
-    <div className="max-w-[80%] m-2 mx-auto mt-8 p-6 text-center bg-white rounded-md  h-[100vh] ">
-      <h1 className="text-4xl font-bold text-gray-800">{`${post.title}`}</h1>
+    <div className="max-w-[80%] m-2 mx-auto mt-8 p-6  bg-white rounded-md  h-[100vh] ">
+      <h1 className="text-4xl font-bold text-center text-gray-800">{`${post.title}`}</h1>
 
       <div
         dangerouslySetInnerHTML={{
